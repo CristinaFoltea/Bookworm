@@ -15,5 +15,5 @@ var server = http.createServer(function (req, res) {
 
 server.listen(9000, function (err) {
   if (err) console.log('SHIT', err)
-  console.log('Waz up on the server port 3333?')
+  console.log('Waz up on the server port 9000?')
 })

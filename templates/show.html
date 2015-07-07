@@ -6,6 +6,28 @@
   <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
-
+  <header>
+    <h1>Bookworm</h1>
+    <nav>
+        <a href="/books"><button>Library</button></a>
+      <a href="/books/new"><button>Add New Book</button></a>
+      <a href="/books/filter"><button>Filter Books</button></a>
+    </nav>
+  </header>
+  {{#books}}
+  <img src="{{cover}}" alt="{{cover}} book cover">
+  <p>Title: {{title}}</p>
+  <p>Author: {{author}}</p>
+  <p>Year: {{year}}</p>
+  <p>Genre: {{genre}}</p>
+  <p class="rating">Rating: {{rating}}</p>
+  <p>Have you read this book: {{read}}</p>
+    <form action="/books/{{_id}}/delete" method ="POST">
+      <input type="submit" value = 'Delete Book' >
+    </form>
+    <form action="/books/{{_id}}/edit" method = 'GET'>
+      <input type="submit"  value='Edit'>
+    </form>
+      {{/books}}
 </body>
 </html>

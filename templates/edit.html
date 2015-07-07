@@ -6,6 +6,50 @@
   <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
+  <header>
+    <h1>Bookworm</h1>
+    <nav>
+      <a href="/new"><button>Add New Book</button></a>
+      <a href="/filter"><button>Filter Books</button></a>
+    </nav>
+  </header>
+  <form action="/books/{{_id}}/update" method="POST">
+    <p>
+      <label for="title">Title</label>
+      <input type="text" name="title" value="{{title}}">
+    </p>
+    <p>
+      <label for="author">Author</label>
+      <input type="text" name="author" value="{{author}}">
+    </p>
+    <p>
+      <label for="year">Year</label>
+      <input type="text" name="year" value="{{year}}">
+    </p>
+    <p>
+      <label for="genre">Genre</label>
+      <input type="text" name="genre" value="{{genre}}">
+    </p>
+    <p>
+      <label for="rating">Rating</label>
+      <select id = "rating" name ="rating" value ="{{rating}}">
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "4">5</option>
+          </select>
+    </p>
+    <p>
+      <label for="cover">Cover URL</label>
+      <input type="text" name="cover" value="{{cover}}">
+    </p>
+    <p>
+      <label for="read">Read/Unread:</label>
+      <input type="checkbox" name="read" value="true">
+    </p>
+    <input type="submit" value="Update">
+  </form>
 
 </body>
 </html>

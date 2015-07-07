@@ -6,6 +6,40 @@
   <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
-
+  <header>
+    <h1>Bookworm</h1>
+    <nav>
+      <a href="/books"><button>Library</button></a>
+      <a href="/books/new"><button>Add New Book</button></a>
+      <a href="/books/filter"><button>Filter Books</button></a>
+    </nav>
+  </header>
+    {{#books}}
+  <form action="/books/filter" method="POST">
+    <p>
+      <label for="author">Author</label>
+      <input type="text" name="author" >
+    </p>
+    <p>
+      <label for="genre">Genre</label>
+      <input type="text" name="genre" >
+    </p>
+    <p>
+      <label for="rating">Rating</label>
+      <select id = "rating" name ="rating" value ="{{rating}}">
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "4">5</option>
+          </select>
+      </p>
+      <p>
+        <label for="read">Read/Unread:</label>
+        <input type="checkbox" name="read" value="true">
+      </p>
+      <input type="submit" value="Filter Books">
+    </form>
+ {{/books}}
 </body>
 </html>
