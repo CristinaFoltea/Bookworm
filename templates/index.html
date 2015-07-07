@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <header>
+    <h1>Bookworm</h1>
+    <nav>
+      <a href="/new"><button>Add New Book</button></a>
+      <a href="/filter"><button>Filter Books</button></a>
+    </nav>
+  </header>
+<section>
+  {{#books}}
+    <a href="/books/{{_id}}">
+      <img src="{{cover}}" alt="">
+      <p>Title: {{title}}</p>
+    </a>
+    <p>Author: {{author}}</p>
+    <div class="rating">{{rating}}</div>
+  {{/books}}
+</section>
+</body>
+</html>
